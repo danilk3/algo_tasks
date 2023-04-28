@@ -5,11 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/*
-Вам выдается список из N чисел и Q запросов. Поисковый запрос задается двумя числами
-i и j; ответом на поисковый запрос является сумма каждого числа в диапазоне [i,j] (включительно).
- */
-
 public class A {
 
     static class FastReader {

@@ -6,10 +6,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-/*
-* Вам дается массив из n целых чисел, и ваша задача - найти индексы трех значений (в разных позициях), сумма которых равна x.
-* */
-
 public class H {
 
     static class Pair {

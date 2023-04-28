@@ -7,10 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-/*
- * Задан массив из n положительных целых чисел, ваша задача - подсчитать количество подмассивов, имеющих сумму x.
- */
-
 public class D {
     static class FastReader {
         BufferedReader br;
@@ -42,23 +38,22 @@ public class D {
         int n = scanner.nextInt();
         int x = scanner.nextInt();
 
-        // value: number of repetitions
         Map<Integer, Integer> map = new HashMap<>();
-        int[] prefix = new int[n + 1];
+        map.put(0, 1);
 
         int res = 0;
+        int pref = 0;
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             int num = scanner.nextInt();
-            prefix[i] = prefix[i - 1] + num;
+            pref += num;
 
-            Integer rep = map.get(num - x);
+            Integer rep = map.get(pref - x);
 
             if (rep != null) {
-                res += rep + 1;
-                map.put(num - x, rep + 1);
+                res += rep;
             }
-            map.put(num, map.getOrDefault(num, 1));
+            map.put(pref, map.getOrDefault(num, 1));
         }
 
         System.out.println(res);
